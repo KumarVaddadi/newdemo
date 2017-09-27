@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="demoPoC.Views.ConsistDetailPage">
+     <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame OutlineColor="Lavender" Opacity="0.9">
+                <StackLayout Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.4*"/>
+                                    <RowDefinition Height="0.3*"/>
+                                    <RowDefinition Height="0.3*"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" VerticalTextAlignment="Center"  Text="{Binding _Consist.ConsistName}"/>
+                                <Label Grid.Row="1"  Text="{Binding _Consist.NrOfCars}"/>
+                                <Label Grid.Row="2" Text="{Binding _Consist.GPRSIpAddress}"/>
+                            </Grid>
+
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Grid.Row="1">
+                <Label Text="VehiclePosition" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                <Label Text="{Binding _Consist.VehiclePos}" HorizontalTextAlignment="Start" />
+                <BoxView BackgroundColor="SpringGreen" HeightRequest="2"/>
+
+                <Label Text="Sold Time" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                <Label Text="{Binding _Consist.SoldTime}" HorizontalTextAlignment="Start" />
+                <BoxView BackgroundColor="SpringGreen" HeightRequest="2"/>
+                <Button BackgroundColor="SpringGreen" Text="Edit Consist"/>
+
+            </StackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
